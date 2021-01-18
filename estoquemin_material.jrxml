@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="controle_horas" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e7b04ae6-d324-43ee-8e9d-d1593621319c">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 4">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 5">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 6">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 7">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="saldo" forecolor="#000000"/>
+	<style name="table 8">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 8_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 8_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 8_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 10">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 10_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 10_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 10_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Controle" uuid="c58850d6-5111-4f59-b7ca-561322fa1f18">
+		<queryString>
+			<![CDATA[SELECT
+     *
+
+
+FROM
+     "dbo"."material" material
+
+WHERE
+estoque_minimo>=quantidade AND status='Em Uso'
+
+order by material]]>
+		</queryString>
+		<field name="id" class="java.lang.Integer"/>
+		<field name="material" class="java.lang.String"/>
+		<field name="localizacao" class="java.lang.String"/>
+		<field name="codigo_fiocruz" class="java.lang.String"/>
+		<field name="unidade" class="java.lang.String"/>
+		<field name="quantidade" class="java.lang.Integer"/>
+		<field name="codigo_sefar" class="java.lang.String"/>
+		<field name="status" class="java.lang.String"/>
+		<field name="categoria" class="java.lang.String"/>
+		<field name="estoque_minimo" class="java.lang.Integer"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT
+     *
+
+
+FROM
+     "dbo"."material" material
+
+WHERE
+estoque_minimo>=quantidade AND status='Em Uso'
+
+order by material]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="material" class="java.lang.String"/>
+	<field name="localizacao" class="java.lang.String"/>
+	<field name="codigo_fiocruz" class="java.lang.String"/>
+	<field name="unidade" class="java.lang.String"/>
+	<field name="quantidade" class="java.lang.Integer"/>
+	<field name="codigo_sefar" class="java.lang.String"/>
+	<field name="status" class="java.lang.String"/>
+	<field name="categoria" class="java.lang.String"/>
+	<field name="estoque_minimo" class="java.lang.Integer"/>
+	<group name="ponto_cadastro_codigo">
+		<groupExpression><![CDATA[]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="130" splitType="Stretch">
+			<image>
+				<reportElement x="748" y="-1" width="52" height="33" uuid="ed3c6000-8685-4341-b30a-74f38cbe3137"/>
+				<imageExpression><![CDATA["labsefarrr.jpg"]]></imageExpression>
+			</image>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="548" y="33" width="254" height="15" uuid="9be90f56-fe12-4981-b07a-a0c74c8f1d40"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="104" y="0" width="591" height="33" uuid="2039d67e-f1cf-444a-8678-93b0f09e09f9"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Almoxarifado - Listagem de material]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="70" width="286" height="20" uuid="1a9ae576-1bf8-471e-b757-97d09fbf2997"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Materiais com saldo abaixo do estoque mínino:]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="36" height="34" uuid="2c178037-0a11-483c-a09e-b11d6a629264"/>
+				<imageExpression><![CDATA["fiocruz.jpg"]]></imageExpression>
+			</image>
+			<componentElement>
+				<reportElement key="table 10" style="table 10" x="0" y="94" width="800" height="28" uuid="41e8d4d2-32a6-4de5-9f54-c6a1e822f531"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Controle" uuid="3cc7d2ff-29d0-40ca-a09b-05f99befe30e">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="49" uuid="07c26e19-204f-4ec1-a774-eed0046b99fc">
+						<jr:columnHeader style="table 10_CH" height="23" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="49" height="23" uuid="8e7c5bca-b6da-4958-a7d7-13c9ed4228a0"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[ID]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 10_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="49" height="20" uuid="72b567f8-f6f7-46cb-aa1a-f1c5e3400cda"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="405" uuid="a3a25066-d922-48a4-b36b-a35df997bac9">
+						<jr:columnHeader style="table 10_CH" height="23" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="405" height="23" uuid="e969572d-a001-49f1-80c5-cc71390e311f"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[MATERIAL]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 10_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="405" height="20" uuid="66260956-448c-448c-8a85-2a5cc841f38d"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{material}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="83" uuid="6b30356d-6540-438c-9539-2bdde2b84cc5">
+						<jr:columnHeader style="table 10_CH" height="23" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="83" height="23" uuid="ca51ac9b-920d-4d87-a886-453d94c4379d"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[LOCALIZAÇÃO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 10_TD" height="20" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="83" height="20" uuid="c4d2d7fd-62b5-4fa3-a8e3-254aefc672f7"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{localizacao}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="fdc82402-3ca8-4044-a115-160226908c9f">
+						<jr:columnHeader style="table 10_CH" height="23" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="23" uuid="7bc018d4-7727-4e67-8128-0732c6a3198e"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[CÓDIGO FIOCRUZ]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 10_TD" height="20" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="90" height="20" uuid="c3ac0137-f465-46ec-a901-5d14f6515705"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{codigo_fiocruz}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="79" uuid="26c0d786-d4d7-4785-a8ef-885920cf9597">
+						<jr:columnHeader style="table 10_CH" height="23" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="79" height="23" uuid="240b5cc1-04fd-487f-baee-bb145dce0dc4"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[QUANTIDADE]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 10_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="79" height="20" uuid="c440a81c-23af-44ae-bbf2-ff4c7d86c52c"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{quantidade}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="5c852c9f-918a-4b9d-b48c-3fd727da78df">
+						<jr:columnHeader style="table 10_CH" height="23" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="23" uuid="5ae9c9d0-6ed9-4fb7-b942-da566055eced"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[ESTOQUE MÍNIMO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 10_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="401c29a2-3c5a-46d4-b162-00b5c2bc28ff"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{estoque_minimo}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</title>
+	<summary>
+		<band height="23"/>
+	</summary>
+</jasperReport>

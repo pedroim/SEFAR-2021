@@ -1,0 +1,124 @@
+
+Listagem de Bolsas por estudo
+
+Transf_Req modelo = new Transf_Req();
+modelo.setCol(1);
+rel_bolsa = new Relat_BolsaPlasma(this, true);
+rel_bolsa.exportar(modelo);
+rel_bolsa.setVisible(true); 
+
+
+
+Listagem de Bolsas Hemolisadas por Estudo
+
+Transf_Req modelo = new Transf_Req();
+modelo.setCol(2);
+rel_bolsa = new Relat_BolsaPlasma(this, true);
+rel_bolsa.exportar(modelo);
+rel_bolsa.setVisible(true);  
+
+
+Listagem de Requisições por Estudo
+
+rel_bolsa_req = new Relat_BolsaPlasma_req(this, true);
+
+rel_bolsa_req.setVisible(true);
+
+
+nova bolsa
+
+
+String nome_user;
+        nome_user=usuario.getText();
+        if((nome_user.equals("Layza Regina Calheiros do Carmo")|| nome_user.equals("Pedro Ivo da Silva Mazzucchelli")|| nome_user.equals("Leandro Schiavo Vilhena"))){
+        
+        
+        
+        int resp=JOptionPane.showConfirmDialog(null, "Deseja realizar um novo cadastro?", "ATENÇÃO!", JOptionPane.YES_NO_OPTION);
+       
+        if (resp == JOptionPane.YES_OPTION) {
+            tela.removeAll();
+        tela.repaint();
+        tela.revalidate();
+
+        tela.add(cadastro);
+        tela.repaint();
+        tela.revalidate();
+        jButton_novo.setEnabled(false);
+novo_cadastro();
+        } 
+        else{
+            JOptionPane.showMessageDialog(null,"Ação cancelada...");
+        }
+        
+        } else{
+            
+            JOptionPane.showMessageDialog(null,"Você não tem acesso para cadastrar material...");
+        }
+
+
+bolsas cadastradas
+
+tela.removeAll();
+        tela.repaint();
+        tela.revalidate();
+
+        tela.add(painel_inicial);
+        tela.repaint();
+        tela.revalidate();
+        preenchertabela_inicial("select * from material order by id");
+        preenchertabela_requisicoes("select * from requisicao order by id");
+
+
+
+
+
+listar requisições
+
+    tela.removeAll();
+        tela.repaint();
+        tela.revalidate();
+
+        tela.add(painel_pedidos);
+        tela.repaint();
+        tela.revalidate();
+        preenchertabela_inicial("select * from material order by id");
+        preenchertabela_requisicoes("select * from requisicao order by id");
+
+
+nova requisicao
+
+int resp=JOptionPane.showConfirmDialog(null, "Deseja realizar uma nova requisição?", "ATENÇÃO!", JOptionPane.YES_NO_OPTION);
+       if (resp == JOptionPane.YES_OPTION) {
+              int cod;
+        obj2= new Requisicao();
+        nova_requisicao();
+
+        try{
+IncluirRe= new IncluirReq();
+cod=IncluirRe.Incluir(obj2);
+            //  Instnumero.setText(String.valueOf(cod));
+           // JOptionPane.showMessageDialog(this, "Requisicão cadastrada!");
+         
+            
+conexao.executaSQL3("select * from requisicao order by id");
+conexao.rs2.last();
+       
+Transf_Req modelo = new Transf_Req();
+modelo.setCol(conexao.rs2.getInt("id"));
+modelo.setSet(conexao.rs2.getString("solicitante"));
+requisicao = new Novo_P(this, true);
+requisicao.exportar(modelo);
+requisicao.setVisible(true);
+  
+
+       }catch(SQLException e){
+           JOptionPane.showMessageDialog(this, e.getMessage());
+       } 
+           
+           
+           
+       }
+       else {
+           JOptionPane.showMessageDialog(null,"Ação cancelada...");
+       }

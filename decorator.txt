@@ -1,0 +1,2 @@
+Programadores se deparam muitas vezes com a situação onde é preciso acrescentar responsabilidades a objetos e não a classe. Uma das opções é utilizar herança, entretanto, esta alternativa é estática. Outra alternativa é especificar uma nova classe para implementar cada responsabilidade que se deseja atribuir 
+dinamicamente a um dado objeto. Esta nova classe se chama Decorator

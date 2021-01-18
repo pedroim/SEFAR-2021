@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="controle_horas" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e7b04ae6-d324-43ee-8e9d-d1593621319c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 4">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 5">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 6">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 7">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="saldo" forecolor="#000000">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{ponto_controle_horapositiva}.before($F{ponto_controle_horanegativa})]]></conditionExpression>
+			<style forecolor="#FF0033"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{ponto_controle_horapositiva}.after($F{ponto_controle_horanegativa})]]></conditionExpression>
+			<style forecolor="#3333FF"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{ponto_controle_saldo}.equals( "08:00:00" )]]></conditionExpression>
+			<style forecolor="#FF0033"/>
+		</conditionalStyle>
+	</style>
+	<style name="saldo final">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{indica}.toString().equals("0")==true]]></conditionExpression>
+			<style forecolor="#FF0033"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{indica}.toString().equals("1")==true]]></conditionExpression>
+			<style forecolor="#0066FF"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$P{indica}.toString().equals("2")==true]]></conditionExpression>
+			<style forecolor="#000000"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="Controle" uuid="c58850d6-5111-4f59-b7ca-561322fa1f18">
+		<parameter name="codigo_table" class="java.lang.Long">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="mes_table" class="java.lang.String"/>
+		<parameter name="ano_table" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[SELECT
+ponto_cadastro."id" AS ponto_cadastro_id,
+     ponto_cadastro."funcionario" AS ponto_cadastro_funcionario,
+     ponto_cadastro."codigo" AS ponto_cadastro_codigo,
+     ponto_controle."id" AS ponto_controle_id,
+     ponto_controle."codigo" AS ponto_controle_codigo,
+     ponto_controle."data" AS ponto_controle_data,
+     ponto_controle."dia" AS ponto_controle_dia,
+     ponto_controle."mes" AS ponto_controle_mes,
+     ponto_controle."ano" AS ponto_controle_ano,
+     ponto_controle."entrada" AS ponto_controle_entrada,
+     ponto_controle."saida" AS ponto_controle_saida,
+     ponto_controle."observacao" AS ponto_controle_observacao,
+     ponto_controle."horapositiva" AS ponto_controle_horapositiva,
+     ponto_controle."horanegativa" AS ponto_controle_horanegativa,
+     ponto_controle."saldo" AS ponto_controle_saldo
+FROM
+"dbo"."ponto_cadastro" ponto_cadastro,
+     "dbo"."ponto_controle" ponto_controle
+WHERE
+ponto_cadastro."codigo"=$P{codigo_table} and ponto_controle."mes"=$P{mes_table} and ponto_controle."ano"=$P{ano_table} and
+ponto_controle."codigo"=$P{codigo_table}]]>
+		</queryString>
+		<field name="ponto_cadastro_id" class="java.lang.Integer"/>
+		<field name="ponto_cadastro_funcionario" class="java.lang.String"/>
+		<field name="ponto_cadastro_codigo" class="java.lang.Long"/>
+		<field name="ponto_controle_id" class="java.lang.Integer"/>
+		<field name="ponto_controle_codigo" class="java.lang.Long"/>
+		<field name="ponto_controle_data" class="java.util.Date"/>
+		<field name="ponto_controle_dia" class="java.lang.String"/>
+		<field name="ponto_controle_mes" class="java.lang.String"/>
+		<field name="ponto_controle_ano" class="java.lang.String"/>
+		<field name="ponto_controle_entrada" class="java.sql.Time"/>
+		<field name="ponto_controle_saida" class="java.sql.Time"/>
+		<field name="ponto_controle_observacao" class="java.lang.String"/>
+		<field name="ponto_controle_horapositiva" class="java.sql.Time"/>
+		<field name="ponto_controle_horanegativa" class="java.sql.Time"/>
+		<field name="ponto_controle_saldo" class="java.sql.Time"/>
+	</subDataset>
+	<parameter name="codigo" class="java.lang.Long">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="mes" class="java.lang.String"/>
+	<parameter name="ano" class="java.lang.String"/>
+	<parameter name="positivo" class="java.lang.String"/>
+	<parameter name="negativo" class="java.lang.String"/>
+	<parameter name="sfinal" class="java.lang.String"/>
+	<parameter name="indica" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT
+     ponto_cadastro."id" AS ponto_cadastro_id,
+     ponto_cadastro."funcionario" AS ponto_cadastro_funcionario,
+     ponto_cadastro."codigo" AS ponto_cadastro_codigo,
+     ponto_controle."id" AS ponto_controle_id,
+     ponto_controle."codigo" AS ponto_controle_codigo,
+     ponto_controle."data" AS ponto_controle_data,
+     ponto_controle."dia" AS ponto_controle_dia,
+     ponto_controle."mes" AS ponto_controle_mes,
+     ponto_controle."ano" AS ponto_controle_ano,
+     ponto_controle."entrada" AS ponto_controle_entrada,
+     ponto_controle."saida" AS ponto_controle_saida,
+     ponto_controle."observacao" AS ponto_controle_observacao,
+     ponto_controle."horapositiva" AS ponto_controle_horapositiva,
+     ponto_controle."horanegativa" AS ponto_controle_horanegativa,
+     ponto_controle."saldo" AS ponto_controle_saldo
+FROM
+     "dbo"."ponto_cadastro" ponto_cadastro,
+     "dbo"."ponto_controle" ponto_controle
+WHERE
+ponto_cadastro."codigo"=$P{codigo} and ponto_controle."mes"=$P{mes} and ponto_controle."ano"=$P{ano} and ponto_controle."codigo"=$P{codigo}]]>
+	</queryString>
+	<field name="ponto_cadastro_id" class="java.lang.Integer"/>
+	<field name="ponto_cadastro_funcionario" class="java.lang.String"/>
+	<field name="ponto_cadastro_codigo" class="java.lang.Long"/>
+	<field name="ponto_controle_id" class="java.lang.Integer"/>
+	<field name="ponto_controle_codigo" class="java.lang.Long"/>
+	<field name="ponto_controle_data" class="java.sql.Date"/>
+	<field name="ponto_controle_dia" class="java.lang.String"/>
+	<field name="ponto_controle_mes" class="java.lang.String"/>
+	<field name="ponto_controle_ano" class="java.lang.String"/>
+	<field name="ponto_controle_entrada" class="java.sql.Time"/>
+	<field name="ponto_controle_saida" class="java.sql.Time"/>
+	<field name="ponto_controle_observacao" class="java.lang.String"/>
+	<field name="ponto_controle_horapositiva" class="java.sql.Time"/>
+	<field name="ponto_controle_horanegativa" class="java.sql.Time"/>
+	<field name="ponto_controle_saldo" class="java.sql.Time"/>
+	<group name="ponto_cadastro_codigo">
+		<groupExpression><![CDATA[$F{ponto_cadastro_codigo}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="115" splitType="Stretch">
+			<image>
+				<reportElement x="501" y="0" width="52" height="33" uuid="ed3c6000-8685-4341-b30a-74f38cbe3137"/>
+				<imageExpression><![CDATA["labsefarrr.jpg"]]></imageExpression>
+			</image>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="301" y="34" width="254" height="15" uuid="9be90f56-fe12-4981-b07a-a0c74c8f1d40"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="104" y="0" width="328" height="33" uuid="2039d67e-f1cf-444a-8678-93b0f09e09f9"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Controle de Frequência Diária]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement key="table 7" style="table 7" isPrintRepeatedValues="false" x="0" y="98" width="553" height="15" uuid="6f57fc9f-53ec-4f54-a9f2-8716dfe0bd68"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Controle" uuid="7bde5365-d2eb-4b8a-9d67-5c113ac2b07a">
+						<datasetParameter name="codigo_table">
+							<datasetParameterExpression><![CDATA[$P{codigo}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="mes_table">
+							<datasetParameterExpression><![CDATA[$P{mes}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="ano_table">
+							<datasetParameterExpression><![CDATA[$P{ano}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="66" uuid="996c0a81-351c-4f56-8fd9-50657642416c">
+						<jr:columnHeader style="table 7_CH" height="22" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="66" height="22" uuid="683a827f-a7d1-4299-aad7-12ccb062a362"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[DATA]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 7_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="66" height="20" uuid="67909869-ebd6-4a03-9d5c-321694a53387"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy").format($F{ponto_controle_data})]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="5c04a87a-2482-49ad-868d-5d9acd64569a">
+						<jr:columnHeader style="table 7_CH" height="22" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="22" uuid="4f267b7e-c256-483f-b849-613bf8f95cf8"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[DIA]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 7_TD" height="20" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="90" height="20" uuid="a4e7366c-b603-4c1c-b0d8-d4e80155de5c"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{ponto_controle_dia}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="68" uuid="14fb7c18-1f54-4ce0-9e25-ad78b0a0fded">
+						<jr:columnHeader style="table 7_CH" height="22" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="68" height="22" uuid="b6b63ce9-0dd6-446d-affe-31af7f16fd68"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[ENTRADA]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 7_TD" height="20" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="68" height="20" uuid="537c5cf6-6e4c-49ab-9227-48c70ecfd3a2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("HH:mm:ss").format($F{ponto_controle_entrada})]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="72" uuid="da744df7-c8e9-4997-af40-0315d8bcda79">
+						<jr:columnHeader style="table 7_CH" height="22" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="72" height="22" uuid="a134daec-177b-4b12-9508-f9b046b1b1e1"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[SAÍDA]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 7_TD" height="20" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="72" height="20" uuid="e7cc425f-50fb-48b7-9d9a-23d273e5eb25"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("HH:mm:ss").format($F{ponto_controle_saida})]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="71" uuid="0f45388f-4240-4237-90c1-03f8fb77dd5b">
+						<jr:columnHeader style="table 7_CH" height="22" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="71" height="22" uuid="5e393060-7316-43a4-b464-eb39af104b21"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[SALDO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 7_TD" height="20" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement style="saldo" x="0" y="0" width="71" height="20" uuid="7a42ad4b-f854-452d-80f0-7d00613e6a80"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("HH:mm:ss").format($F{ponto_controle_saldo})]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="184" uuid="6a3ddef1-f6c0-4ab6-aa5a-fcd96b978817">
+						<jr:columnHeader style="table 7_CH" height="22" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="184" height="22" uuid="99b9900e-b759-4167-91eb-102a7fd33dc3"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[OBSERVAÇÃO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 7_TD" height="20" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="184" height="20" uuid="e9b6d6c4-dd9a-4839-97d3-f98f6ac9ef73"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{ponto_controle_observacao}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<rectangle radius="10">
+				<reportElement x="0" y="51" width="553" height="42" backcolor="#CCCCCC" uuid="e3234039-b177-4335-a400-bdd2342f34b6"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="10" y="73" width="78" height="20" uuid="3459f0f6-672a-44f0-911a-55f7247b23f7"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mês referência:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="88" y="73" width="122" height="20" uuid="79e6eca9-fdd9-4219-9c57-3b34cfa2da2e"/>
+				<textFieldExpression><![CDATA[$F{ponto_controle_mes}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="53" width="78" height="20" uuid="23fd88e4-1daa-4741-a696-35c6823c468f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Funcionário(a):]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="88" y="53" width="293" height="20" uuid="e81cf18f-bc36-4900-aff1-5b7ed82558d2"/>
+				<textFieldExpression><![CDATA[$F{ponto_cadastro_funcionario}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="392" y="53" width="26" height="20" uuid="a6d9638d-bd85-408d-be26-62607c91df8d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CPF:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="418" y="53" width="135" height="20" uuid="46215d63-a6ff-4a9c-b980-3d240088c885"/>
+				<textFieldExpression><![CDATA[$F{ponto_cadastro_codigo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="210" y="73" width="78" height="20" uuid="38d80170-b02c-4af7-880f-9225c336cb0b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ano referência:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="288" y="73" width="130" height="20" uuid="be54b993-2455-4c1e-b751-255be3929804"/>
+				<textFieldExpression><![CDATA[$F{ponto_controle_ano}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="2" y="0" width="36" height="33" uuid="b6d3c5ba-40d3-475e-84fd-aae254c4b7be"/>
+				<imageExpression><![CDATA["fiocruz.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<summary>
+		<band height="60" splitType="Stretch">
+			<textField>
+				<reportElement x="92" y="3" width="100" height="20" forecolor="#0066FF" uuid="78bc16ca-36af-4294-b966-fec56df53e3c"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{positivo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="277" y="3" width="100" height="20" forecolor="#CC0033" uuid="1ea572c4-60ab-4b35-a8c1-1efc0c5a8362"/>
+				<textFieldExpression><![CDATA[$P{negativo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="saldo final" x="457" y="3" width="91" height="20" uuid="1bd8ff66-1416-4f3d-8747-c1a14fe67c36"/>
+				<textFieldExpression><![CDATA[$P{sfinal}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="6" y="39" width="169" height="1" uuid="436120d7-228e-4d60-975e-f3d1e6318b34"/>
+			</line>
+			<staticText>
+				<reportElement x="38" y="40" width="100" height="19" uuid="311dd72b-fcca-4316-9600-7502f1958dc3"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Funcionário(a)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="41" width="100" height="18" uuid="e07427a3-51d0-4562-8a04-ff7ff80f0fd0"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Chefe Imediato]]></text>
+			</staticText>
+			<line>
+				<reportElement x="371" y="40" width="169" height="1" uuid="3235333e-770e-4eb2-9cd4-631e8c4953b9"/>
+			</line>
+			<staticText>
+				<reportElement x="18" y="3" width="73" height="20" uuid="b6d5fcc4-b200-4d4c-a3ad-1ee1ef627292"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total positivo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="204" y="3" width="73" height="20" uuid="05393125-9ba0-4424-a818-84b5fd3e60b5"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total negativo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="383" y="3" width="73" height="20" uuid="01f2f3cf-bba0-4ab4-b317-c608f2a998f5"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Saldo final:]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

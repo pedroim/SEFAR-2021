@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="detalhe_equipamentos" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="BlankPage" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ba2b502d-566b-4149-98dc-46fb3274531a">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="163"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="91300766-a639-4637-9c96-d5edcbdfd4a8">
+		<parameter name="cod_eqq" class="java.lang.Integer">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="sef" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[SELECT
+    *
+
+FROM
+     "dbo"."amostras_bio" amostras_bio
+
+WHERE amostras_bio."id_estudo"=$P{cod_eqq} and amostras_bio."status"='Não enviada' order by amostras_bio."id"]]>
+		</queryString>
+		<field name="id" class="java.lang.Integer"/>
+		<field name="tempo_coleta" class="java.lang.String"/>
+		<field name="codigo_sefar" class="java.lang.String"/>
+		<field name="volume_a" class="java.lang.Double"/>
+		<field name="volume_a_atual" class="java.lang.Double"/>
+		<field name="volume_b" class="java.lang.Double"/>
+		<field name="volume_b_atual" class="java.lang.Double"/>
+		<field name="volume_c" class="java.lang.Double"/>
+		<field name="volume_c_atual" class="java.lang.Double"/>
+		<field name="freezer" class="java.lang.String"/>
+		<field name="prateleira" class="java.lang.String"/>
+		<field name="plasma" class="java.lang.String"/>
+		<field name="obs" class="java.lang.String"/>
+		<field name="descongelamento" class="java.lang.Integer"/>
+		<field name="status" class="java.lang.String"/>
+		<field name="id_estudo" class="java.lang.Integer"/>
+		<variable name="variable1" class="java.lang.Integer" calculation="Count">
+			<variableExpression><![CDATA[$F{codigo_sefar}]]></variableExpression>
+			<initialValueExpression><![CDATA[0]]></initialValueExpression>
+		</variable>
+	</subDataset>
+	<subDataset name="dataset1" uuid="d335e505-ff30-4fe8-a6a6-9dabe3ac2c60"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\mazzucchelli\\Documents\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="cod_sef" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+    *
+
+FROM
+     "dbo"."estudos_bioequivalencia" estudos_bioequivalencia
+
+WHERE estudos_bioequivalencia."id" =$P{cod_sef}]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="codigo_estudo" class="java.lang.String"/>
+	<field name="codigo_clinica" class="java.lang.String"/>
+	<field name="codigo_metodo" class="java.lang.String"/>
+	<field name="tipo_amostra" class="java.lang.String"/>
+	<field name="anticoagulante" class="java.lang.String"/>
+	<field name="finalidade" class="java.lang.String"/>
+	<field name="n_voluntarios" class="java.lang.Integer"/>
+	<field name="n_fases" class="java.lang.Integer"/>
+	<field name="n_pontos" class="java.lang.Integer"/>
+	<field name="status" class="java.lang.String"/>
+	<variable name="codigo_amostra_1" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<variable name="codigo_amostra_2" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<variable name="codigo_amostra_3" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<variable name="codigo_amostra_4" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<variable name="codigo_amostra_5" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<variable name="codigo_amostra_6" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<group name="equipamento">
+		<groupExpression><![CDATA[$F{id}]]></groupExpression>
+	</group>
+	<group name="Componentes">
+		<groupExpression><![CDATA[]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="157" splitType="Stretch">
+			<image scaleImage="RealHeight">
+				<reportElement x="1" y="8" width="49" height="35" uuid="5fe982f0-fefa-4d9a-8bc2-e2d86c20004b"/>
+				<imageExpression><![CDATA["logo_fiocruz.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="465" y="8" width="86" height="57" uuid="b2c81b47-8660-4ac9-820a-48a6f9e1ebfa"/>
+				<imageExpression><![CDATA["labsefarrr.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="54" y="10" width="97" height="11" uuid="2b95a40a-6500-4481-b438-81d160a1065b"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Ministério da Saúde]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="54" y="33" width="147" height="12" uuid="58580485-07b2-4301-85e7-297463ec1288"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FIOCRUZ – Fundação Oswaldo Cruz]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="54" y="44" width="232" height="21" uuid="69d47fef-ac15-43bd-bc74-b07ce9d69046"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[VPPIS – Vice-Presidência de Produção e Inovação em Saúde
+SEFAR – Serviço de Equivalência e Farmacocinética
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="1" y="70" width="550" height="15" uuid="7b328fae-cf94-428f-8d22-9751f0c5e332"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FORMULÁRIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="1" y="90" width="464" height="15" uuid="ea45b0fe-1723-45fc-aa8b-c54c2e2acd77"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONFERÊNCIA DE AMOSTRAS NÃO ENVIADAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="465" y="90" width="85" height="15" uuid="bcaff1ca-e0c4-497b-a0cd-2becb2b62e89"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FORM 059.05]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="75" y="115" width="136" height="20" uuid="34e59115-976d-46a1-9401-8ab6cc9e45fb"/>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigo_estudo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="115" width="72" height="20" uuid="8ba4bb28-9388-4d02-9155-512d1ba91e30"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Código do Estudo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="135" width="72" height="20" uuid="4c8728dc-15af-4f02-8c17-48adf769687a"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Código da Clínica:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="75" y="135" width="136" height="20" uuid="3f9e0987-43f9-4d1a-9f61-9c3428447f13"/>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigo_clinica}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="381" y="115" width="169" height="20" uuid="97b51272-9da2-401a-a114-a7f1d1f84974"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Autorização: __________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="381" y="135" width="41" height="20" uuid="3a069152-b1f9-494c-9061-3c87975688bf"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Data/Hora:]]></text>
+			</staticText>
+			<textField pattern="">
+				<reportElement x="424" y="135" width="49" height="20" uuid="02d9f174-b812-48c7-bf13-10898ed54f16"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy").format(new Date())]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="474" y="135" width="65" height="20" uuid="a6188634-0907-4c06-9b74-c484a91f6e9a"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("HH:mm:ss").format(new Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="42">
+			<componentElement>
+				<reportElement key="table 4" style="table 4" x="151" y="0" width="224" height="42" uuid="161a45ab-a84a-475d-acbc-6e0d1780fd8d"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Table Dataset 1" uuid="eb8a4609-a572-4478-b60b-797e8c8c1cbf">
+						<datasetParameter name="cod_eqq">
+							<datasetParameterExpression><![CDATA[$P{cod_sef}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="81" uuid="a61cac87-71c4-41f0-a45b-8fe0b6e0f404">
+						<jr:tableHeader style="table 4_TH" height="16" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="80" height="15" uuid="ce2dc1f0-86d9-4898-86a3-b0c805777491"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Código da Amostra]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter style="table 4_TD" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="81" height="30" uuid="9c38f840-1bdf-47b4-8f34-3ff9b5703c61"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" isBold="true"/>
+								</textElement>
+								<text><![CDATA[TOTAL:]]></text>
+							</staticText>
+						</jr:tableFooter>
+						<jr:detailCell style="table 4_TD" height="17" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="80" height="14" uuid="b2ddf9da-579b-4335-8139-54b9a8e445db"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{codigo_sefar}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="03c6c359-5f3a-4c13-9b5c-9c8ca77a65e6">
+						<jr:tableHeader style="table 4_TH" height="16" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="69" height="15" uuid="085f015d-1abd-4d3b-98fa-cd532e06b6b9"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Tempo de Coleta]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter style="table 4_TD" height="30" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="70" height="30" uuid="30a80890-3c0b-4a92-85d2-111b26c0a762"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{variable1}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:detailCell style="table 4_TD" height="17" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="69" height="14" uuid="62f0f112-0b97-40bb-8dc2-20430ceca47f"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{tempo_coleta}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="571acb35-b6ad-4746-b8d8-4dec4f511611">
+						<jr:tableHeader style="table 4_TH" height="16" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="69" height="15" uuid="c5f86e1c-aabd-4132-aa9c-e95faca76dd0"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Preencher com X]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="30" rowSpan="1"/>
+						<jr:detailCell style="table 4_TD" height="17" rowSpan="1"/>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="160">
+			<textField>
+				<reportElement x="480" y="115" width="43" height="15" uuid="91119994-4d4e-4399-8168-12961efbd1db"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pág.: "+$V{PAGE_NUMBER}+"/"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="523" y="115" width="29" height="15" uuid="53e76cc1-4274-40b2-992c-24c3f8fbab45"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="table" x="3" y="115" width="477" height="15" uuid="49ca8341-b6bc-485b-bd4f-fad7241bf584"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Data de efetivação: 07/04/2017]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" x="480" y="115" width="72" height="15" uuid="ac62c204-4ecf-4827-afcf-d8e518ba6732"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="134" width="188" height="22" uuid="4694c00e-84bf-4796-9f43-df9538adc21b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CÓPIA ELETRÔNICA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="0" width="548" height="28" uuid="0afd19a3-d336-4540-920e-28500ab93d56"/>
+				<textElement textAlignment="Justified">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[* Este campo deverá ser preenchido durante a preparação e análise instrumental. Ao término do estudo favor datar, assinar e devolver para a responsável pela custódia de amostras.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="70" width="548" height="20" uuid="b0f77eff-2449-4f30-a736-99c3b64604d2"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Responsável pela Checagem do Formulário na Análise Instrumental: __________________________________  Data: ____/____/____  Hora: ____:____]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="30" width="548" height="20" uuid="69a9b713-64cf-4e23-9e06-11b09ca7ad85"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Responsável pela Distribuição do Formulário de Conferência: ________________________________________  Data: ____/____/____  Hora: ____:____]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="90" width="548" height="20" uuid="77f1b79d-9ba5-4fd9-83b8-24bb29fca5ce"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Supervisão GT: ____________________________________________________________________________  Data: ____/____/____  Hora: ____:____]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="50" width="548" height="20" uuid="46a695e0-3463-4f70-bbb8-978876c81329"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Responsável pela Checagem do Formulário: _____________________________________________________  Data: ____/____/____  Hora: ____:____]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

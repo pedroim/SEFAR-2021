@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="detalhe_equipamentos" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ba2b502d-566b-4149-98dc-46fb3274531a">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 12">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 12_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 12_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 12_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="tABLE_1" uuid="c529fde0-61de-4e7a-8173-17f51e228795">
+		<parameter name="dt_inicio2" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="dt_fim2" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="set" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[SELECT
+     *
+
+FROM
+     "dbo"."equipamentos", "dbo"."tipos_equipamentos"
+
+WHERE tipos_equipamentos.id = equipamentos.id_tipo and setor=$P{set} and validade<=$P{dt_fim2}
+
+order by validade desc]]>
+		</queryString>
+		<field name="id" class="java.lang.Integer"/>
+		<field name="codigo" class="java.lang.String"/>
+		<field name="tipo_equip" class="java.lang.String"/>
+		<field name="data_aquisicao" class="java.sql.Date"/>
+		<field name="status" class="java.lang.String"/>
+		<field name="localizacao" class="java.lang.String"/>
+		<field name="nrserie" class="java.lang.String"/>
+		<field name="modelo" class="java.lang.String"/>
+		<field name="patrimonio" class="java.lang.String"/>
+		<field name="dt_descarte" class="java.sql.Date"/>
+		<field name="periodicidade" class="java.lang.String"/>
+		<field name="prox_calibracao" class="java.sql.Date"/>
+		<field name="prox_qualificacao" class="java.sql.Date"/>
+		<field name="prox_manutencao" class="java.sql.Date"/>
+		<field name="especificaoes" class="java.lang.String"/>
+		<field name="observacoes" class="java.lang.String"/>
+		<field name="fabricante" class="java.lang.String"/>
+		<field name="periodicidade_qual" class="java.lang.String"/>
+		<field name="prox_manutencao_prev" class="java.sql.Date"/>
+		<field name="id_tipo" class="java.lang.Integer"/>
+		<field name="anexos" class="java.lang.Object"/>
+		<field name="data_tombamento" class="java.sql.Date"/>
+		<field name="termo_resp" class="java.lang.String"/>
+		<field name="resp_bem" class="java.lang.String"/>
+		<field name="metodo" class="java.lang.String"/>
+		<field name="processo_aquisicao" class="java.lang.String"/>
+		<field name="data_envio_proc" class="java.sql.Date"/>
+		<field name="nr_rc" class="java.lang.String"/>
+		<field name="patrimonio_fiotec" class="java.lang.String"/>
+		<field name="data_solic_patrimonio" class="java.sql.Date"/>
+		<field name="nr_termo_adocao" class="java.lang.String"/>
+		<field name="processo_fiocruz_doacao" class="java.lang.String"/>
+		<field name="periodicidade_ver" class="java.lang.String"/>
+		<field name="prox_verificacao" class="java.sql.Date"/>
+		<field name="id_subtipo" class="java.lang.Integer"/>
+		<field name="cod_metrol" class="java.lang.String"/>
+		<field name="validade" class="java.sql.Date"/>
+		<field name="tipo" class="java.lang.String"/>
+		<field name="categoria" class="java.lang.String"/>
+		<field name="setor" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="dt_inicio" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="dt_fim" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="setor" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     *
+
+FROM
+     "dbo"."equipamentos", "dbo"."tipos_equipamentos"
+
+WHERE tipos_equipamentos.id = equipamentos.id_tipo and setor=$P{setor} and validade<= $P{dt_fim}]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="codigo" class="java.lang.String"/>
+	<field name="tipo_equip" class="java.lang.String"/>
+	<field name="data_aquisicao" class="java.sql.Date"/>
+	<field name="status" class="java.lang.String"/>
+	<field name="localizacao" class="java.lang.String"/>
+	<field name="nrserie" class="java.lang.String"/>
+	<field name="modelo" class="java.lang.String"/>
+	<field name="patrimonio" class="java.lang.String"/>
+	<field name="dt_descarte" class="java.sql.Date"/>
+	<field name="periodicidade" class="java.lang.String"/>
+	<field name="prox_calibracao" class="java.sql.Date"/>
+	<field name="prox_qualificacao" class="java.sql.Date"/>
+	<field name="prox_manutencao" class="java.sql.Date"/>
+	<field name="especificaoes" class="java.lang.String"/>
+	<field name="observacoes" class="java.lang.String"/>
+	<field name="fabricante" class="java.lang.String"/>
+	<field name="periodicidade_qual" class="java.lang.String"/>
+	<field name="prox_manutencao_prev" class="java.sql.Date"/>
+	<field name="id_tipo" class="java.lang.Integer"/>
+	<field name="anexos" class="java.lang.Object"/>
+	<field name="data_tombamento" class="java.sql.Date"/>
+	<field name="termo_resp" class="java.lang.String"/>
+	<field name="resp_bem" class="java.lang.String"/>
+	<field name="metodo" class="java.lang.String"/>
+	<field name="processo_aquisicao" class="java.lang.String"/>
+	<field name="data_envio_proc" class="java.sql.Date"/>
+	<field name="nr_rc" class="java.lang.String"/>
+	<field name="patrimonio_fiotec" class="java.lang.String"/>
+	<field name="data_solic_patrimonio" class="java.sql.Date"/>
+	<field name="nr_termo_adocao" class="java.lang.String"/>
+	<field name="processo_fiocruz_doacao" class="java.lang.String"/>
+	<field name="periodicidade_ver" class="java.lang.String"/>
+	<field name="prox_verificacao" class="java.sql.Date"/>
+	<field name="id_subtipo" class="java.lang.Integer"/>
+	<field name="cod_metrol" class="java.lang.String"/>
+	<field name="validade" class="java.sql.Date"/>
+	<field name="tipo" class="java.lang.String"/>
+	<field name="categoria" class="java.lang.String"/>
+	<field name="setor" class="java.lang.String"/>
+	<group name="equipamentos_id">
+		<groupExpression><![CDATA[$F{id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="158" splitType="Stretch">
+			<staticText>
+				<reportElement x="120" y="0" width="328" height="33" uuid="69d47fef-ac15-43bd-bc74-b07ce9d69046"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Controle de Equipamentos - SEFAR]]></text>
+			</staticText>
+			<image>
+				<reportElement x="509" y="0" width="63" height="41" uuid="b2c81b47-8660-4ac9-820a-48a6f9e1ebfa"/>
+				<imageExpression><![CDATA["labsefarrr.jpg"]]></imageExpression>
+			</image>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="317" y="41" width="254" height="15" uuid="c5ff7736-7b60-4286-838c-75913d6f6a6d"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="104" y="56" width="264" height="20" uuid="a93ce52b-baa5-4787-a99d-982dc0df48d2"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Resultado da próxima garantia até a data:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="368" y="56" width="71" height="20" uuid="bc3a59e1-206f-47f4-b059-09fb993baec4"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dt_fim}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement key="table 12" style="table 12" x="0" y="101" width="571" height="57" uuid="b8e1cb91-9eb5-44c6-82c2-da7db910b01f"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="tABLE_1" uuid="afb2817f-505e-4ec4-96d6-5f9689ac805c">
+						<datasetParameter name="dt_inicio2">
+							<datasetParameterExpression><![CDATA[$P{dt_inicio}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="dt_fim2">
+							<datasetParameterExpression><![CDATA[$P{dt_fim}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="set">
+							<datasetParameterExpression><![CDATA[$F{setor}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="ef959fa4-d927-4efc-8635-8be0a848d3a3">
+						<jr:columnHeader style="table 12_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="54c6358c-e845-41c1-ae7b-5b13cf78410e"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[CÓDIGO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 12_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 12_TD" height="20" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement isPrintRepeatedValues="false" x="0" y="0" width="90" height="20" isRemoveLineWhenBlank="true" uuid="c45c9143-94ed-47bc-8f86-cdc2ec0cf31e"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="120" uuid="65a0204a-f010-46fe-9029-d124a60579e8">
+						<jr:columnHeader style="table 12_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="120" height="30" uuid="86d4f0eb-115a-49a9-889a-b5d98b519da0"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[TIPO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 12_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 12_TD" height="20" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="120" height="20" uuid="594ae0bc-6eca-49eb-a8bb-b9fb16e87743"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{tipo_equip}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="2fc8d85e-5510-4cac-99e3-e0c47bccc8c8">
+						<jr:columnHeader style="table 12_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="1a9661bc-16d9-4ca0-9e24-d1cb318f6a4d"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[FABRICANTE]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 12_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 12_TD" height="20" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="90" height="20" uuid="3e751b65-de82-4e9c-9f4a-a2a329857096"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{fabricante}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="3b997139-072b-4fd6-b7ea-29791f6c6323">
+						<jr:columnHeader style="table 12_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="cf9a3e1f-facd-4658-846c-75f3d7788feb"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Nº SÉRIE]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 12_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 12_TD" height="20" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="90" height="20" uuid="ea299109-b0bc-4379-b01f-a44553646b15"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{nrserie}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="2e93c0b1-4807-498e-a412-ded07588c7a9">
+						<jr:columnHeader style="table 12_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="2daa16ac-3003-4f77-bb8e-34f601a661b9"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[PATRIMÔNIO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 12_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 12_TD" height="20" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="90" height="20" uuid="16fb6ab7-fe3a-42d2-89e4-b5b1078e8afc"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{patrimonio}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="dc8189c6-35dc-43da-9183-801b86c27e5d">
+						<jr:columnHeader style="table 12_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="23d47e3e-abba-45d7-b65c-e711b7d78470"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[GARANTIA]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 12_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 12_TD" height="20" rowSpan="1">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="90" height="20" uuid="f1e8e6ef-c207-4588-a5f6-3093d4d228ce"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy").format($F{validade})]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</title>
+</jasperReport>

@@ -1,0 +1,7 @@
+SELECT
+ "dbo"."equipamentos".id as id_v, "dbo"."equipamentos".tipo_equip as tp,"dbo"."subtipos_equipamentos".nome as name, "dbo"."equipamentos".codigo as cod, (select top 1 "dbo"."equip_calibracao".nr_certificado from "dbo"."equip_calibracao" where "dbo"."equipamentos".id ="dbo"."equip_calibracao".id_equip order by "dbo"."equip_calibracao".data_cal desc ) as cert,  (select top 1 "dbo"."equip_calibracao".data_cal from "dbo"."equip_calibracao" where "dbo"."equipamentos".id ="dbo"."equip_calibracao".id_equip order by "dbo"."equip_calibracao".data_cal desc ) as dt_test, (select top 1 "dbo"."equip_calibracao".aprovacao from "dbo"."equip_calibracao" where "dbo"."equipamentos".id ="dbo"."equip_calibracao".id_equip order by "dbo"."equip_calibracao".data_cal desc ) as aprov
+
+FROM
+     "dbo"."equipamentos", "dbo"."subtipos_equipamentos", "dbo"."equip_calibracao"
+
+WHERE "dbo"."equipamentos".id in ($P!{id_eq}) and id_subtipo="dbo"."subtipos_equipamentos".id  order by "dbo"."equipamentos".tipo_equip

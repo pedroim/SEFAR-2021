@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="detalhe_equipamentos" language="groovy" pageWidth="612" pageHeight="792" whenNoDataType="BlankPage" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ba2b502d-566b-4149-98dc-46fb3274531a">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="91300766-a639-4637-9c96-d5edcbdfd4a8">
+		<parameter name="cod_eqq" class="java.lang.Integer">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="sef" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[SELECT
+    *
+
+FROM
+     "dbo"."requisicao_sel" requisicao_sel
+
+WHERE requisicao_sel."id_pedido"=$P{cod_eqq}]]>
+		</queryString>
+		<field name="id" class="java.lang.Integer"/>
+		<field name="id_pedido" class="java.lang.Integer"/>
+		<field name="id_aliquota" class="java.lang.Integer"/>
+		<field name="codigo_aliquota" class="java.lang.String"/>
+		<field name="status" class="java.lang.String"/>
+		<field name="volume_utilizado" class="java.lang.Double"/>
+	</subDataset>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\mazzucchelli\\Documents\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="cod_sef" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+    *
+
+FROM
+     "dbo"."funcionarios" funcionarios
+
+WHERE funcionarios."ativo" =$P{cod_sef}
+
+order by funcionarios."nome"]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="tel_res" class="java.lang.String"/>
+	<field name="tel_cel" class="java.lang.String"/>
+	<field name="endereco" class="java.lang.String"/>
+	<field name="bairro" class="java.lang.String"/>
+	<field name="cidade" class="java.lang.String"/>
+	<field name="estado" class="java.lang.String"/>
+	<field name="cep" class="java.lang.String"/>
+	<field name="pais" class="java.lang.String"/>
+	<field name="anotacoes" class="java.lang.String"/>
+	<field name="sigla" class="java.lang.String"/>
+	<field name="estado_civil" class="java.lang.String"/>
+	<field name="dependente" class="java.lang.Integer"/>
+	<field name="sexo" class="java.lang.String"/>
+	<field name="ativo" class="java.lang.String"/>
+	<field name="setor" class="java.lang.String"/>
+	<field name="funcao" class="java.lang.String"/>
+	<field name="dt_contra" class="java.sql.Date"/>
+	<field name="dt_desliga" class="java.sql.Date"/>
+	<field name="identidade" class="java.lang.String"/>
+	<field name="cpf" class="java.lang.String"/>
+	<field name="pis" class="java.lang.String"/>
+	<field name="titulo" class="java.lang.String"/>
+	<field name="certreserv" class="java.lang.String"/>
+	<field name="banco" class="java.lang.String"/>
+	<field name="agencia" class="java.lang.String"/>
+	<field name="conta" class="java.lang.String"/>
+	<field name="dt_nasc" class="java.sql.Date"/>
+	<field name="ensino_medio" class="java.lang.String"/>
+	<field name="status_medio" class="java.lang.String"/>
+	<field name="ensino_superior" class="java.lang.String"/>
+	<field name="status_superior" class="java.lang.String"/>
+	<field name="extras" class="java.lang.String"/>
+	<field name="nome_curso_medio" class="java.lang.String"/>
+	<field name="nome_curso_superior" class="java.lang.String"/>
+	<field name="emissao" class="java.sql.Date"/>
+	<field name="vinculo" class="java.lang.String"/>
+	<field name="matricula" class="java.lang.String"/>
+	<field name="ferias" class="java.lang.String"/>
+	<field name="cargo" class="java.lang.String"/>
+	<field name="reg_prof" class="java.lang.String"/>
+	<field name="tetano" class="java.sql.Date"/>
+	<field name="hepatite1" class="java.sql.Date"/>
+	<field name="hepatite2" class="java.sql.Date"/>
+	<field name="hepatite3" class="java.sql.Date"/>
+	<field name="empresa" class="java.lang.String"/>
+	<field name="ensino_pos" class="java.lang.String"/>
+	<field name="tipo_pos" class="java.lang.String"/>
+	<field name="nome_curso_pos" class="java.lang.String"/>
+	<field name="status_pos" class="java.lang.String"/>
+	<group name="equipamento">
+		<groupExpression><![CDATA[$F{id}]]></groupExpression>
+		<groupHeader>
+			<band height="112">
+				<textField isBlankWhenNull="true">
+					<reportElement x="51" y="20" width="221" height="20" uuid="cce2dd24-f379-4aab-af1b-e51e861354d1"/>
+					<textFieldExpression><![CDATA[$F{cpf}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="4" y="20" width="46" height="20" uuid="e2362ceb-ef0d-461a-93df-1fcd87f6edf4"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[CPF:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="0" width="46" height="20" forecolor="#000000" uuid="bb85ce00-ee1e-4e44-ba4f-0d4ff22c2f87"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nome:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="51" y="0" width="519" height="20" forecolor="#0099CC" uuid="fb5e1bd3-971e-41f4-bb12-7a39840ceb5f"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="330" y="20" width="240" height="20" uuid="74cd0812-b164-4886-9f41-ca7e832cd255"/>
+					<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="284" y="20" width="45" height="20" uuid="003dc021-1d99-43b9-8429-be981d0945b3"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Email:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="384" y="40" width="186" height="20" uuid="e6fd0b14-38d2-4bf5-bd5a-83b45fbe70f4"/>
+					<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy").format($F{dt_nasc})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="4" y="40" width="46" height="20" uuid="f1872a23-13e4-49ae-9504-7d0ccbfaa5bc"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Sigla:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="51" y="40" width="221" height="20" uuid="ee717280-51d3-4691-9ed6-38deae7c2fcf"/>
+					<textFieldExpression><![CDATA[$F{sigla}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="284" y="40" width="98" height="20" uuid="c1e8e94e-ae7f-4439-9b9a-91645fc92f46"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Data de nascimento:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="60" width="46" height="20" uuid="a3ab1eb3-c2ee-43f4-815e-425fec307744"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Setor:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="51" y="60" width="221" height="20" uuid="d7017531-5480-455f-886e-4cd60d1f9c72"/>
+					<textFieldExpression><![CDATA[$F{setor}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="284" y="60" width="45" height="20" uuid="574596de-02fa-4a8e-86b4-39fe878b67ea"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Cargo:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="331" y="60" width="239" height="20" uuid="9b81bf0f-19e5-43a8-9cdd-678ac4ba3525"/>
+					<textFieldExpression><![CDATA[$F{cargo}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="4" y="80" width="46" height="20" uuid="7a4d338e-8de5-41f1-adc2-df9f78e9c98e"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Função:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="51" y="80" width="221" height="20" uuid="01e91284-7a2f-490d-9859-5d192462a973"/>
+					<textFieldExpression><![CDATA[$F{funcao}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="284" y="80" width="45" height="20" uuid="bbf23dc3-6ed6-4402-9baf-a6d70516f16c"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Vínculo:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="331" y="80" width="239" height="20" uuid="7eaebd5b-531b-4439-8cb3-5cdcca44db8d"/>
+					<textFieldExpression><![CDATA[$F{vinculo}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="4" y="104" width="566" height="1" uuid="84ea48b0-2f5e-4635-b363-d8d35562bf30"/>
+				</line>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Componentes">
+		<groupExpression><![CDATA[]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="68" splitType="Stretch">
+			<staticText>
+				<reportElement x="50" y="0" width="457" height="33" uuid="69d47fef-ac15-43bd-bc74-b07ce9d69046"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Listagem de Colaboradores - SEFAR]]></text>
+			</staticText>
+			<image>
+				<reportElement x="507" y="0" width="63" height="41" uuid="b2c81b47-8660-4ac9-820a-48a6f9e1ebfa"/>
+				<imageExpression><![CDATA["labsefarrr.jpg"]]></imageExpression>
+			</image>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="439" y="41" width="130" height="15" uuid="c5ff7736-7b60-4286-838c-75913d6f6a6d"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageFooter>
+		<band height="36">
+			<textField>
+				<reportElement x="449" y="9" width="80" height="20" uuid="91119994-4d4e-4399-8168-12961efbd1db"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="529" y="9" width="40" height="20" uuid="53e76cc1-4274-40b2-992c-24c3f8fbab45"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

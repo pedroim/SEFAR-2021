@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="detalhe_equipamentos" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ba2b502d-566b-4149-98dc-46fb3274531a">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="91300766-a639-4637-9c96-d5edcbdfd4a8"/>
+	<parameter name="id_eqp" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     equipamentos."id" AS equipamentos_id,
+     equipamentos."codigo" AS equipamentos_codigo,
+     equipamentos."tipo_equip" AS equipamentos_tipo_equip,
+     equipamentos."data_aquisicao" AS equipamentos_data_aquisicao,
+     equipamentos."status" AS equipamentos_status,
+     equipamentos."localizacao" AS equipamentos_localizacao,
+     equipamentos."nrserie" AS equipamentos_nrserie,
+     equipamentos."modelo" AS equipamentos_modelo,
+     equipamentos."patrimonio" AS equipamentos_patrimonio,
+     equipamentos."dt_descarte" AS equipamentos_dt_descarte,
+     equipamentos."periodicidade" AS equipamentos_periodicidade,
+     equipamentos."prox_calibracao" AS equipamentos_prox_calibracao,
+     equipamentos."prox_qualificacao" AS equipamentos_prox_qualificacao,
+     equipamentos."prox_manutencao" AS equipamentos_prox_manutencao,
+     equipamentos."especificaoes" AS equipamentos_especificaoes,
+     equipamentos."observacoes" AS equipamentos_observacoes,
+     equipamentos."fabricante" AS equipamentos_fabricante,
+     equipamentos."periodicidade_qual" AS equipamentos_periodicidade_qual,
+     equipamentos."prox_manutencao_prev" AS equipamentos_prox_manutencao_prev,
+     equip_componente."id" AS equip_componente_id,
+     equip_componente."codigo" AS equip_componente_codigo,
+     equip_componente."marca" AS equip_componente_marca,
+     equip_componente."modelo" AS equip_componente_modelo,
+     equip_componente."nrserie" AS equip_componente_nrserie,
+     equip_componente."patrimonio" AS equip_componente_patrimonio,
+     equip_componente."parte" AS equip_componente_parte,
+     equip_componente."dtaquisicao" AS equip_componente_dtaquisicao,
+     equip_componente."status" AS equip_componente_status,
+     equip_componente."localizacao" AS equip_componente_localizacao,
+     equip_componente."id_equip" AS equip_componente_id_equip,
+     equip_componente."nome" AS equip_componente_nome
+FROM
+     "dbo"."equipamentos" equipamentos,"dbo"."equip_componente" equip_componente
+
+WHERE equipamentos."id" =$P{id_eqp}]]>
+	</queryString>
+	<field name="equipamentos_id" class="java.lang.Integer"/>
+	<field name="equipamentos_codigo" class="java.lang.String"/>
+	<field name="equipamentos_tipo_equip" class="java.lang.String"/>
+	<field name="equipamentos_data_aquisicao" class="java.sql.Date"/>
+	<field name="equipamentos_status" class="java.lang.String"/>
+	<field name="equipamentos_localizacao" class="java.lang.String"/>
+	<field name="equipamentos_nrserie" class="java.lang.String"/>
+	<field name="equipamentos_modelo" class="java.lang.String"/>
+	<field name="equipamentos_patrimonio" class="java.lang.String"/>
+	<field name="equipamentos_dt_descarte" class="java.sql.Date"/>
+	<field name="equipamentos_periodicidade" class="java.lang.String"/>
+	<field name="equipamentos_prox_calibracao" class="java.sql.Date"/>
+	<field name="equipamentos_prox_qualificacao" class="java.sql.Date"/>
+	<field name="equipamentos_prox_manutencao" class="java.sql.Date"/>
+	<field name="equipamentos_especificaoes" class="java.lang.String"/>
+	<field name="equipamentos_observacoes" class="java.lang.String"/>
+	<field name="equipamentos_fabricante" class="java.lang.String"/>
+	<field name="equipamentos_periodicidade_qual" class="java.lang.String"/>
+	<field name="equipamentos_prox_manutencao_prev" class="java.sql.Date"/>
+	<field name="equip_componente_id" class="java.lang.Integer"/>
+	<field name="equip_componente_codigo" class="java.lang.String"/>
+	<field name="equip_componente_marca" class="java.lang.String"/>
+	<field name="equip_componente_modelo" class="java.lang.String"/>
+	<field name="equip_componente_nrserie" class="java.lang.String"/>
+	<field name="equip_componente_patrimonio" class="java.lang.String"/>
+	<field name="equip_componente_parte" class="java.lang.String"/>
+	<field name="equip_componente_dtaquisicao" class="java.sql.Date"/>
+	<field name="equip_componente_status" class="java.lang.String"/>
+	<field name="equip_componente_localizacao" class="java.lang.String"/>
+	<field name="equip_componente_id_equip" class="java.lang.Integer"/>
+	<field name="equip_componente_nome" class="java.lang.String"/>
+	<group name="equipamentos_id">
+		<groupExpression><![CDATA[$F{equipamentos_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="402" splitType="Stretch">
+			<image scaleImage="RealHeight">
+				<reportElement x="0" y="0" width="48" height="41" uuid="95424be0-a837-46c6-b0e0-a070545f91e5"/>
+				<imageExpression><![CDATA["fiocruz.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="120" y="0" width="328" height="33" uuid="69d47fef-ac15-43bd-bc74-b07ce9d69046"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Controle de Equipamentos - SEFAR]]></text>
+			</staticText>
+			<image>
+				<reportElement x="509" y="0" width="63" height="41" uuid="b2c81b47-8660-4ac9-820a-48a6f9e1ebfa"/>
+				<imageExpression><![CDATA["labsefarrr.jpg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="0" y="56" width="539" height="20" forecolor="#3399FF" uuid="0fc3e94f-cb68-4823-a4ee-ea0e22601f90"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{equipamentos_tipo_equip}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="317" y="41" width="254" height="15" uuid="c5ff7736-7b60-4286-838c-75913d6f6a6d"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="103" y="76" width="196" height="20" uuid="bb0ee0b0-eea8-4ed5-8488-99eb69e44728"/>
+				<textFieldExpression><![CDATA[$F{equipamentos_codigo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="103" y="96" width="196" height="20" uuid="6262b8db-811c-43ba-991d-6e34e64be5b7"/>
+				<textFieldExpression><![CDATA[$F{equipamentos_data_aquisicao}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="103" y="116" width="196" height="20" uuid="a708d73d-5203-4537-a64e-1ec7a17e8f24"/>
+				<textFieldExpression><![CDATA[$F{equipamentos_status}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="103" y="136" width="196" height="20" uuid="6dd798dd-5b96-45c4-8fe9-0c22843d5b1b"/>
+				<textFieldExpression><![CDATA[$F{equipamentos_fabricante}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="103" y="156" width="196" height="20" uuid="5ea818d8-44da-4e7b-80e9-b963b35997cb"/>
+				<textFieldExpression><![CDATA[$F{equipamentos_localizacao}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="302" y="136" width="100" height="20" uuid="952a5b73-914d-4638-85e5-fc8e4c48fd80"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data de descarte:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="302" y="96" width="100" height="20" uuid="af37a5d9-35c6-4c2c-ae6d-89657926c3f6"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Modelo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="302" y="116" width="100" height="20" uuid="ef7a3196-658a-495b-b45e-a3bf5d2f3f95"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Patrimônio:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="302" y="76" width="100" height="20" uuid="d38e2f28-0b43-4666-b1e6-171de619f33c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nº série:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="402" y="76" width="169" height="20" uuid="e4bd43d1-5f1e-4f96-b471-a04a8d7046dc"/>
+				<textFieldExpression><![CDATA[$F{equipamentos_nrserie}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="402" y="96" width="169" height="20" uuid="485c5ae2-473a-4926-a8ca-5e462ba1c5a3"/>
+				<textFieldExpression><![CDATA[$F{equipamentos_modelo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="402" y="116" width="169" height="20" uuid="d8593001-7e49-47fb-b7df-de98458f99d0"/>
+				<textFieldExpression><![CDATA[$F{equipamentos_patrimonio}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="402" y="136" width="169" height="20" uuid="90e574ba-d581-4500-9d92-ef3d1ff44f12"/>
+				<textFieldExpression><![CDATA[$F{equipamentos_dt_descarte}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="2" y="196" width="569" height="77" uuid="77a00fb7-1fe0-4ca3-a3f7-8a9c2ce49e65"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{equipamentos_especificaoes}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="76" width="100" height="20" uuid="56ea3f2b-af49-43cd-a23c-f1f57bd4501f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="96" width="100" height="20" uuid="115a1824-33e7-4e21-afc0-713e4e1cebcd"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data de aquisição:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="116" width="100" height="20" uuid="f44e5f15-a230-460b-930a-093c0fadf390"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="136" width="100" height="20" uuid="b8458efa-d5c0-4bc1-97d1-484be506d78f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fabricante:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="156" width="100" height="20" uuid="726fc040-fb4a-478d-8189-fe0eabca8468"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Localização atual:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="272" width="156" height="20" uuid="326680da-edda-4f60-879b-9b75df53e15e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Observações:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="3" y="292" width="569" height="83" uuid="081af875-db08-4e9d-b6ee-e8dc047b3ff9"/>
+				<textFieldExpression><![CDATA[$F{equipamentos_observacoes}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="176" width="156" height="20" uuid="228c73d7-6008-4f77-9d70-f0457a7d922a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Especificações do equipamento:]]></text>
+			</staticText>
+		</band>
+	</title>
+</jasperReport>
